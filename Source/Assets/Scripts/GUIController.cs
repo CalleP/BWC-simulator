@@ -11,7 +11,8 @@ public class GUIController : MonoBehaviour
     void Update()
     {
         string commandString2 = "";
-
+        
+        //Iterates through the commands that have been sent to the server and displays it on the GUI
         for (int i = WebServer.List.Count - 1; i > WebServer.List.Count - 30; i--)
         {
             if (i >= 0) commandString2 = commandString2 + WebServer.List[i] + "\n";
@@ -22,6 +23,7 @@ public class GUIController : MonoBehaviour
 
     void OnGUI()
     {
+        //Displays text labels on the screen for user feedback
         GUI.Label(new Rect(0, 20, Screen.width, Screen.height), ConnectionStatus);
         GUI.Label(new Rect(0, 40, Screen.width, Screen.height), CommandString);
     }
