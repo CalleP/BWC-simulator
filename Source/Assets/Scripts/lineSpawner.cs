@@ -31,7 +31,7 @@ public class lineSpawner : MonoBehaviour
             latestClone.name = amountSpawned.ToString();
         }
 
-        //If the the button is released it will communicate with the WallAdjustor and cause it run it the finalizing function to enable the collider and such
+        //If the the button is released it will communicate with the WallAdjustor and cause it to construct its Collider amongst other things
         else if (Input.GetKeyUp(KeyCode.Mouse0) && !firstClick)
         {
             firstClick = true;
