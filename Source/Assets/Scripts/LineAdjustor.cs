@@ -40,7 +40,6 @@ public class LineAdjustor : MonoBehaviour
             var collider = (BoxCollider2D)transform.FindChild("Collider").gameObject.AddComponent("BoxCollider2D");
         }
 
-        //
         if (transform.FindChild("Collider").GetComponent("BoxCollider2D") != null)
         {
             if (Finished && GetComponent("BoxCollider2D") == null)
