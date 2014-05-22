@@ -12,7 +12,7 @@ public class GUIController : MonoBehaviour
     {
         string commandString2 = "";
         
-        //Iterates through the commands that have been sent to the server and displays it on the GUI
+        //Iterates through the commands that have been sent to the server to show it on on the GUI
         for (int i = WebServer.List.Count - 1; i > WebServer.List.Count - 30; i--)
         {
             if (i >= 0) commandString2 = commandString2 + WebServer.List[i] + "\n";
