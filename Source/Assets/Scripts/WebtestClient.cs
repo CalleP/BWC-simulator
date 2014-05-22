@@ -1,12 +1,10 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
 using UnityEngine;
-
 using System.Collections.Generic;
-
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
