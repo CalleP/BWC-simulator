@@ -13,10 +13,6 @@ using WebSocketSharp.Server;
 //Server utilizing the Websocket-sharp library
 public class WebServer : WebSocketService{
 
-
-    
-	// Use this for initialization
-
     static WebSocketServer aServer;
     public static List<string> list = new List<string>();
     
