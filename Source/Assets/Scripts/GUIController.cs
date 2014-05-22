@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 //This class handles the gui
 public class GUIController : MonoBehaviour
 {
