@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 //This class spawns and controls parts of the LineAdjustor class to properly position and rotate the line through mouse input 
 public class lineSpawner : MonoBehaviour
 {
