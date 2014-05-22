@@ -31,8 +31,6 @@ public class ServerHandler : MonoBehaviour
         //testClient.delayedMessage("forward", 1000);
     }
 
-
-
     void Update()
     {
         //Checks the server for the latest command and performs that command for a specified time(0.3 sec) until a new command is given.
