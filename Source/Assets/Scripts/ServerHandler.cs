@@ -35,7 +35,7 @@ public class ServerHandler : MonoBehaviour
 
     void Update()
     {
-        //Checks the server for the latest command and performs that command for a specified time until a new command is given.
+        //Checks the server for the latest command and performs that command for a specified time(0.3 sec) until a new command is given.
         if (WebServer.List.Count != 0)
         {
             string command = WebServer.List[WebServer.List.Count - 1];
