@@ -9,7 +9,6 @@ using System.Threading;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-
 //Server utilizing the Websocket-sharp library
 public class WebServer : WebSocketService
 {
