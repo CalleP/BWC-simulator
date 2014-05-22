@@ -21,11 +21,8 @@ public class LineAdjustor : MonoBehaviour
         lineRenderer.material.SetColor(0, Color.green);
     }
 
-
-
     void Update()
     {
-        
         var newMousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, 0f);
         if (Adjusting)
         {
