@@ -19,26 +19,26 @@ public class WebServer : WebSocketService{
 
     static WebSocketServer aServer;
     public static List<string> list = new List<string>();
-	public WebServer () {
+    
+    public WebServer () 
+    {
         Debug.Log("webserver created");
-       
-	}
+    }
 
     protected override void OnOpen()
     {
-
         GUIController.ConnectionStatus = "Client Connected";
-        
-        
+
     }
+    
     protected override void OnError(ErrorEventArgs e)
     {
         Debug.Log("server error: " + e.ToString());
         Debug.Log("server error: "+e.Message);
     }
+    
     protected override void OnMessage(MessageEventArgs e)
     {
-        
         GUIController.ConnectionStatus = "Message recieved";
         var msg = e.Data;
         list.Add(msg);
@@ -46,6 +46,7 @@ public class WebServer : WebSocketService{
         Send("Input next command:");
         
     }
+    
     protected override void OnClose(CloseEventArgs e)
     {
         Debug.Log(e.Reason);
