@@ -21,7 +21,6 @@ public class LineAdjustor : MonoBehaviour
         lineRenderer.SetPosition(1, OldMousePos);
         lineRenderer.renderer.enabled = false;
         lineRenderer.material.SetColor(0, Color.green);
-
     }
 
 
@@ -31,10 +30,8 @@ public class LineAdjustor : MonoBehaviour
         var newMousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, 0f);
         if (Adjusting)
         {
-
             lineRenderer.SetPosition(0, newMousePos);
             lineRenderer.renderer.enabled = true;
-            
         }
 
         if (Finished && transform.FindChild("Collider").GetComponent("BoxCollider2D") == null)
@@ -46,7 +43,6 @@ public class LineAdjustor : MonoBehaviour
         {
             if (Finished && GetComponent("BoxCollider2D") == null)
             {
-                
                 var collider = (BoxCollider2D)gameObject.AddComponent("BoxCollider2D");
                 collider.enabled = false;
                 collider.size = new Vector2((Vector3.Distance(
@@ -59,7 +55,6 @@ public class LineAdjustor : MonoBehaviour
                 var dir = newMousePos - collider2.transform.position;
                 var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 collider2.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                 
             }
         }
     }
