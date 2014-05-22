@@ -19,6 +19,7 @@ public class lineSpawner : MonoBehaviour
 
     void Update()
     {
+        //If the mouse is being held in it will scale the linerenderer between the clicked position and the current position of the mouse
         if (Input.GetKey(KeyCode.Mouse0) && firstClick)
         {
             firstClick = false;
@@ -30,18 +31,22 @@ public class lineSpawner : MonoBehaviour
             latestClone.name = amountSpawned.ToString();
         }
 
+        //If the the button is released it will communicate with the WallAdjustor and cause it run it the finalizing function to enable the collider and such
         else if (Input.GetKeyUp(KeyCode.Mouse0) && !firstClick)
         {
             firstClick = true;
             latestScript.Adjusting = false;
             latestScript.Finished = true;
+            
+            //If the mouse is not dragged but just clicked it will delete the created object to prevent the creation of collision objects with very small sizes
             if (oldMousePos.Equals(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, 0f)))
             {
                 Destroy(latestClone);
                 amountSpawned--;
             }
         }
-
+        
+        //Destroy the latest wall if the right mouse button is clicked
         if (Input.GetKey(KeyCode.Mouse1))
         {
             Destroy(GameObject.Find(amountSpawned.ToString()));
