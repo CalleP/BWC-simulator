@@ -5,7 +5,6 @@ using System.Threading;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-
 //This class instantiates the server and translates the commands it's recieving into movement for the car.
 public class ServerHandler : MonoBehaviour
 {
