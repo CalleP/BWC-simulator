@@ -11,6 +11,7 @@ public class ServerHandler : MonoBehaviour
 {
 
     public int Port = 80;
+
     private WebSocketServer server;
     private PlayerControls playerController;
 
@@ -35,9 +36,10 @@ public class ServerHandler : MonoBehaviour
     void Update()
     {
         //Checks the server for the latest command and performs that command for a specified time until a new command is given.
-        if (WebServer.list.Count != 0)
+        if (WebServer.List.Count != 0)
         {
-            string command = WebServer.list[WebServer.list.Count - 1];
+            string command = WebServer.List[WebServer.List.Count - 1];
+
             if (command == "forward" && TimeOfLastCommand > Time.time)
             {
                 playerController.Forward();
@@ -65,12 +67,12 @@ public class ServerHandler : MonoBehaviour
                 Debug.Log("server stoppping");
             }
 
-            if (previousListSize != WebServer.list.Count)
+            if (previousListSize != WebServer.List.Count)
             {
                 TimeOfLastCommand = Time.time + 0.3f;
             }
 
-            previousListSize = WebServer.list.Count;
+            previousListSize = WebServer.List.Count;
         }
     }
 

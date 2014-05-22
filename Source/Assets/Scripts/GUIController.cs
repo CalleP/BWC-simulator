@@ -12,9 +12,10 @@ public class GUIController : MonoBehaviour
     void Update()
     {
         string commandString2 = "";
-        for (int i = WebServer.list.Count - 1; i > WebServer.list.Count - 30; i--)
+
+        for (int i = WebServer.List.Count - 1; i > WebServer.List.Count - 30; i--)
         {
-            if (i >= 0) commandString2 = commandString2 + WebServer.list[i] + "\n";
+            if (i >= 0) commandString2 = commandString2 + WebServer.List[i] + "\n";
         }
 
         CommandString = commandString2;

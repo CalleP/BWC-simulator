@@ -9,6 +9,7 @@ public class lineSpawner : MonoBehaviour
     private int amountSpawned = 0;
     private bool firstClick = true;
     private Vector3 oldMousePos;
+
     private LineAdjustor latestScript;
     private GameObject latestClone;
 

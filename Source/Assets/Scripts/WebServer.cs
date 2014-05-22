@@ -14,9 +14,7 @@ using WebSocketSharp.Server;
 public class WebServer : WebSocketService
 {
 
-    static WebSocketServer aServer;
-
-    public static List<string> list = new List<string>();
+    public static List<string> List = new List<string>();
 
     public WebServer()
     {
@@ -38,7 +36,7 @@ public class WebServer : WebSocketService
     {
         GUIController.ConnectionStatus = "Message recieved";
         var msg = e.Data;
-        list.Add(msg);
+        List.Add(msg);
         Debug.Log(msg);
         Send("Input next command:");
     }
