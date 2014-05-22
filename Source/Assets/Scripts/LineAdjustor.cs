@@ -12,8 +12,6 @@ public class LineAdjustor : MonoBehaviour
     public bool Adjusting = true;
     public bool Finished = false;
 
-    BoxCollider2D Collider;
-
     void Start()
     {
         lineRenderer = (LineRenderer)GetComponent("LineRenderer");

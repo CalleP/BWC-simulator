@@ -11,6 +11,8 @@ public class ServerHandler : MonoBehaviour
 {
 
     public int Port = 80;
+    private int previousListSize = 0;
+    public static float TimeOfLastCommand;
 
     private WebSocketServer server;
     private PlayerControls playerController;
@@ -30,8 +32,7 @@ public class ServerHandler : MonoBehaviour
         //testClient.delayedMessage("forward", 1000);
     }
 
-    private int previousListSize = 0;
-    public static float TimeOfLastCommand;
+
 
     void Update()
     {
