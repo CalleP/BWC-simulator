@@ -24,6 +24,7 @@ public class LineAdjustor : MonoBehaviour
     void Update()
     {
         var newMousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, 0f);
+
         if (Adjusting)
         {
             //Causes one of the positional vectors of the linerenderer to follow the current mouse position.
