@@ -24,6 +24,7 @@ public class lineSpawner : MonoBehaviour
         {
             firstClick = false;
             latestClone = (GameObject)Instantiate(Resources.Load("Waller"));
+            latestClone.tag = "obstacle";
             latestScript = (LineAdjustor)latestClone.GetComponent("LineAdjustor");
             oldMousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, 0f);
             latestScript.OldMousePos = oldMousePos;

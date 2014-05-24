@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{F5FF2A3D-B9FF-CCF0-78D7-79CF911B14E4}</ProjectGuid>
+	<ProjectGuid>{9A11237F-ED63-616E-DBDE-C39399B84FC5}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,7 +49,6 @@
      <Compile Include="Assets\Dead Assets\LaserController.cs" />
      <Compile Include="Assets\Dead Assets\ParticleBuildUp.cs" />
      <Compile Include="Assets\Dead Assets\PlayerCamera.cs" />
-     <Compile Include="Assets\Dead Assets\PlayerControls.cs" />
      <Compile Include="Assets\Dead Assets\PlayerShooting.cs" />
      <Compile Include="Assets\Dead Assets\Server.cs" />
      <Compile Include="Assets\Dead Assets\testClient.cs" />
@@ -57,7 +56,12 @@
      <Compile Include="Assets\Dead Assets\wallSpawner.cs" />
      <Compile Include="Assets\Scripts\GUIController.cs" />
      <Compile Include="Assets\Scripts\LineAdjustor.cs" />
+     <Compile Include="Assets\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\ResponseSonarScript.cs" />
      <Compile Include="Assets\Scripts\ServerHandler.cs" />
+     <Compile Include="Assets\Scripts\SonarColliderController.cs" />
+     <Compile Include="Assets\Scripts\SonarCollisionController.cs" />
+     <Compile Include="Assets\Scripts\SonarController.cs" />
      <Compile Include="Assets\Scripts\WebServer.cs" />
      <Compile Include="Assets\Scripts\WebtestClient.cs" />
      <Compile Include="Assets\Scripts\lineSpawner.cs" />

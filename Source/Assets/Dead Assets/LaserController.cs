@@ -5,10 +5,10 @@ public class LaserController : MonoBehaviour {
 
 	// Use this for initialization
     public float rotationSpeed;
-    BoxCollider2D collider;
+    //BoxCollider2D collider;
     bool isCollding = false;
 	void Start () {
-        collider = (BoxCollider2D)GetComponent("BoxCollider2D");
+    //    collider = (BoxCollider2D)GetComponent("BoxCollider2D");
 	}
 	
 	// Update is called once per frame

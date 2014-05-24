@@ -22,8 +22,10 @@ public class PlayerControls : MonoBehaviour {
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
 	public KeyCode moveRight;
+    public KeyCode sonar;
 	private Vector2 direction;
 	private bool rotating = false;
+    private float sonarCD = 0;
 
     
 
@@ -36,6 +38,7 @@ public class PlayerControls : MonoBehaviour {
 		moveDown = KeyCode.S;
 		moveLeft = KeyCode.A;
 		moveRight = KeyCode.D;
+        sonar = KeyCode.E;
 
 
 
@@ -44,6 +47,13 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (sonarCD <= Time.time)
+        {
+            SonarController.response = false;
+        }
+
+
 		direction = transform.up;
 
 		rotating = false;
@@ -51,7 +61,12 @@ public class PlayerControls : MonoBehaviour {
 
 
 		transform.rotation = transform.rotation;
-		if (Input.GetKey (moveLeft)) {
+
+        if (Input.GetKey(sonar))
+        {
+            Sonar();
+        }
+        if (Input.GetKey (moveLeft)) {
 			Left();
 		}
 		if (Input.GetKey (moveRight)) {
@@ -143,6 +158,23 @@ public class PlayerControls : MonoBehaviour {
 		//var timer =- Time.deltaTime;
 
 	}
+
+    public void Sonar() 
+    {
+        if (sonarCD <= Time.time)
+        {
+            var sonar = transform.FindChild("Sonar");
+            var particleSystem = (ParticleSystem)sonar.GetComponent("ParticleSystem");
+            particleSystem.Clear(true);
+            particleSystem.Play();
+            //var particle = (GameObject)Instantiate(Resources.Load("Sonar"));
+            //particle.transform.parent = transform;
+            sonarCD = Time.time + 1.6f;
+        }
+
+
+    }
+
 
 
     bool colliding = false;
