@@ -1,0 +1,3 @@
+Optimize Echolation class (the nested collider for loop is not necessary).
+Remove the static variable "response" from the playercontroller.
+Remove echolation wave one by one when collided. Currently it looks like it's firing some kind of goop when it partly collides.
