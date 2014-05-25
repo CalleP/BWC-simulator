@@ -27,11 +27,11 @@ public class ServerHandler : MonoBehaviour
         playerController = (PlayerControls)go.GetComponent(typeof(PlayerControls));
 
         //Uncomment if you want to construct a debug class that sends commands to the server
-        var testClient = new WebtestClient("80");
-        testClient.delayedMessage("forward", 1000);
-        testClient.delayedMessage("forward", 2000);
-        testClient.delayedMessage("GetSonar", 3000);
-        testClient.delayedMessage("forward", 3200);
+        //var testClient = new WebtestClient("80");
+        //testClient.delayedMessage("forward", 1000);
+        //testClient.delayedMessage("forward", 2000);
+        //testClient.delayedMessage("GetSonar", 3000);
+        //testClient.delayedMessage("forward", 3200);
     }
 
     void Update()
