@@ -36,7 +36,12 @@ public class WebServer : WebSocketService
         var msg = e.Data;
         List.Add(msg);
         Debug.Log(msg);
-        Send("Input next command:");
+        
+        if (msg == "GetSonar")
+        {
+            delayedSonarMessage(1000);
+        }
+
     }
 
     protected override void OnClose(CloseEventArgs e)
@@ -44,6 +49,20 @@ public class WebServer : WebSocketService
         Debug.Log(e.Reason);
         GUIController.ConnectionStatus = "Client Disconnected";
         base.OnClose(e);
+    }
+
+    public void delayedSonarMessage(int delay)
+    {
+        var t = new Thread(() => realDelayMessage(delay));
+        t.Start();
+    }
+
+    private void realDelayMessage(int delay)
+    {
+        Debug.Log("delayed");
+        System.Threading.Thread.Sleep(delay);
+        Send(ResponseSonarScript.latestDistance.ToString());
+        
     }
 }
 

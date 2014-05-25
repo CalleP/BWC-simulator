@@ -23,73 +23,47 @@ public class SonarController : MonoBehaviour {
         var obstacles = GameObject.FindGameObjectsWithTag("obstacle");
 
         bool setParticles = false;
-        foreach (var obstacle in obstacles)
+        int count = 0;
+        foreach (var particle in particles)
         {
-            int count = 0;
-            foreach (var particle in particles)
-            {
                 
-                //var collider = (PolygonCollider2D)GameObject.Find("sonarColliderAux").GetComponent("PolygonCollider2D");
+            var polyCollider = (PolygonCollider2D)GameObject.Find("sonarColliderAux").GetComponent("PolygonCollider2D");
 
-                var colliders = Physics2D.OverlapPointAll(particle.position);
+            var colliders = Physics2D.OverlapPointAll(particle.position);
 
 
-                newParticles[count] = particle;
+            newParticles[count] = particle;
 
-                foreach (var collider in colliders)
-	            {
-		            if (collider.tag == "obstacle")
+            foreach (var collider in colliders)
+	        {
+		        if (collider.tag == "obstacle")
+                {
+                    if (!response)
                     {
-                        if (!response)
-                        {
-                            response = true;
-                            Instantiate(Resources.Load("ResponseSonar"), particle.position, Quaternion.identity);
-                        }
-                        var particle2 = particle;
-                        particle2.lifetime = -1;
-                        newParticles[count] = particle2;
-                        setParticles = true;
-
+                        response = true;
+                        Instantiate(Resources.Load("ResponseSonar"), particle.position, Quaternion.identity);
                     }
-	            }
+                    var particle2 = particle;
+                    particle2.lifetime = -1;
+                    newParticles[count] = particle2;
+                    setParticles = true;
+
+                }
+	        }
 
 
 
-                count += 1;
-            }
-            
-
+            count += 1;
         }
-        
-        string test = "";
-        // foreach (var item in newParticles)
-        //{
-        //    test += item.lifetime.ToString();
 
-        //}
-         Debug.Log(setParticles.ToString());
 
         if(setParticles)particleSystem.SetParticles(newParticles, 3000);
-	}
-    
-    private static ParticleSystem.Particle[] GetInterval(ParticleSystem.Particle[] particles, int first, int last)
-    {
-        ParticleSystem.Particle[] returnedParticles = new ParticleSystem.Particle[(last-first)+1];
-        int count = 0;
 
-        foreach (var item in particles)
-        {
-            if (count >= first && count <= last)
-            {
-                returnedParticles[count] = item;
-            }
-
-            count++;
-        }
-
-
-
-        return returnedParticles;
     }
-    
+        
+
 }
+    
+
+    
+

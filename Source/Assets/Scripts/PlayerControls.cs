@@ -48,10 +48,7 @@ public class PlayerControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (sonarCD <= Time.time)
-        {
-            SonarController.response = false;
-        }
+
 
 
 		direction = transform.up;
@@ -159,7 +156,7 @@ public class PlayerControls : MonoBehaviour {
 
 	}
 
-    public void Sonar() 
+    public float Sonar() 
     {
         if (sonarCD <= Time.time)
         {
@@ -171,6 +168,7 @@ public class PlayerControls : MonoBehaviour {
             //particle.transform.parent = transform;
             sonarCD = Time.time + 1.6f;
         }
+        return ResponseSonarScript.latestDistance;
 
 
     }

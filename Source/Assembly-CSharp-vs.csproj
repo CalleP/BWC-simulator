@@ -54,6 +54,7 @@
      <Compile Include="Assets\Dead Assets\testClient.cs" />
      <Compile Include="Assets\Dead Assets\wallAdjustor.cs" />
      <Compile Include="Assets\Dead Assets\wallSpawner.cs" />
+     <Compile Include="Assets\Scripts\CollisionParticle.cs" />
      <Compile Include="Assets\Scripts\GUIController.cs" />
      <Compile Include="Assets\Scripts\LineAdjustor.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />

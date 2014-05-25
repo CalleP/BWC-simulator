@@ -27,8 +27,11 @@ public class ServerHandler : MonoBehaviour
         playerController = (PlayerControls)go.GetComponent(typeof(PlayerControls));
 
         //Uncomment if you want to construct a debug class that sends commands to the server
-        //var testClient = new WebtestClient("80");
-        //testClient.delayedMessage("forward", 1000);
+        var testClient = new WebtestClient("80");
+        testClient.delayedMessage("forward", 1000);
+        testClient.delayedMessage("forward", 2000);
+        testClient.delayedMessage("GetSonar", 3000);
+        testClient.delayedMessage("forward", 3200);
     }
 
     void Update()
@@ -60,6 +63,11 @@ public class ServerHandler : MonoBehaviour
                 playerController.Right();
             }
 
+            if (command == "GetSonar" && TimeOfLastCommand > Time.time)
+            {
+                playerController.Sonar();
+            }
+
             if (command == "exit" && server != null)
             {
                 Debug.Log("server stoppping");
@@ -68,6 +76,7 @@ public class ServerHandler : MonoBehaviour
             if (previousListSize != WebServer.List.Count)
             {
                 TimeOfLastCommand = Time.time + 0.3f;
+                
             }
 
             previousListSize = WebServer.List.Count;

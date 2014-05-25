@@ -26,5 +26,6 @@ public class GUIController : MonoBehaviour
         //Displays text labels on the screen for user feedback
         GUI.Label(new Rect(0, 20, Screen.width, Screen.height), ConnectionStatus);
         GUI.Label(new Rect(0, 40, Screen.width, Screen.height), CommandString);
+        GUI.Label(new Rect(160, 0, Screen.width, Screen.height),"Sonar: " + ResponseSonarScript.latestDistance.ToString());
     }
 }

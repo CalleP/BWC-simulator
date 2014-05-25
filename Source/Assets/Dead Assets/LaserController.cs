@@ -51,7 +51,7 @@ public class LaserController : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
 
-        Debug.Log(other.GetInstanceID());
+        
         isCollding = true;
     } 
 }
