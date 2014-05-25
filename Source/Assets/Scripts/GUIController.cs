@@ -4,7 +4,7 @@ using System.Collections;
 //This class handles the gui
 public class GUIController : MonoBehaviour
 {
-
+    
     public static string ConnectionStatus = "No connection";
     public static string CommandString = "no commands";
 
