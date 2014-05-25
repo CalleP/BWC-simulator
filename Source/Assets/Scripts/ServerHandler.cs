@@ -76,7 +76,6 @@ public class ServerHandler : MonoBehaviour
             if (previousListSize != WebServer.List.Count)
             {
                 TimeOfLastCommand = Time.time + 0.3f;
-                
             }
 
             previousListSize = WebServer.List.Count;

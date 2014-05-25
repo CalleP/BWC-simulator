@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
-public class PlayerControls : MonoBehaviour {
+public class PlayerControls : MonoBehaviour 
+{
 	
 	public float accelerationRate = 100f;
 	public float deAccelerationRate = 100f;
@@ -25,7 +24,8 @@ public class PlayerControls : MonoBehaviour {
     private float sonarCD = 0;
 	float Speed;
 	
-	void Start () {
+	void Start () 
+    {
 		moveUp = KeyCode.W;
 		moveDown = KeyCode.S;
 		moveLeft = KeyCode.A;
@@ -34,10 +34,10 @@ public class PlayerControls : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		direction = transform.up;
 		rotating = false;
-		//transform.rotation = transform.rotation;
 
         if (Input.GetKey(sonar))
         {
@@ -73,14 +73,15 @@ public class PlayerControls : MonoBehaviour {
 
 		if (currentVelocity < maxVelocity * -1) currentVelocity = maxVelocity * -1;
 		if (currentVelocity > maxVelocity) currentVelocity = maxVelocity;
-
 	}
 	
-	void FixedUpdate(){
+	void FixedUpdate()
+    {
 		rigidbody2D.AddForce (direction*(currentVelocity*10));
 	}
 	
-	void OnGUI(){
+	void OnGUI()
+    {
 		GUI.Label (new Rect (0, 0, Screen.width, Screen.height), currentVelocity.ToString()+"  "+(direction).ToString());
 	}
 

@@ -48,20 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\Dead Assets\LaserController.cs" />
      <Compile Include="Assets\Dead Assets\ParticleBuildUp.cs" />
-     <Compile Include="Assets\Dead Assets\PlayerCamera.cs" />
-     <Compile Include="Assets\Dead Assets\PlayerShooting.cs" />
-     <Compile Include="Assets\Dead Assets\Server.cs" />
      <Compile Include="Assets\Dead Assets\testClient.cs" />
      <Compile Include="Assets\Dead Assets\wallAdjustor.cs" />
      <Compile Include="Assets\Dead Assets\wallSpawner.cs" />
-     <Compile Include="Assets\Scripts\CollisionParticle.cs" />
      <Compile Include="Assets\Scripts\GUIController.cs" />
      <Compile Include="Assets\Scripts\LineAdjustor.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\ResponseSonarScript.cs" />
      <Compile Include="Assets\Scripts\ServerHandler.cs" />
      <Compile Include="Assets\Scripts\SonarColliderController.cs" />
-     <Compile Include="Assets\Scripts\SonarCollisionController.cs" />
      <Compile Include="Assets\Scripts\SonarController.cs" />
      <Compile Include="Assets\Scripts\WebServer.cs" />
      <Compile Include="Assets\Scripts\WebtestClient.cs" />

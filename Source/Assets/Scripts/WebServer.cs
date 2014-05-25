@@ -41,7 +41,6 @@ public class WebServer : WebSocketService
         {
             delayedSonarMessage(1000);
         }
-
     }
 
     protected override void OnClose(CloseEventArgs e)
@@ -62,7 +61,6 @@ public class WebServer : WebSocketService
         Debug.Log("delayed");
         System.Threading.Thread.Sleep(delay);
         Send(ResponseSonarScript.latestDistance.ToString());
-        
     }
 }
 

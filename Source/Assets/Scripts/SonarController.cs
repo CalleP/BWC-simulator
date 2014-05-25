@@ -2,21 +2,16 @@
 using System.Collections;
 using System.Linq;
 
-public class SonarController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-        //transform.localScale = new Vector3(4f, 0, 50);
-	}
+public class SonarController : MonoBehaviour
+{
 
     public static bool response;
+
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[3000];
-
         var i = particleSystem.GetParticles(particles);
-
-        var y = "FF";
 
         var newParticles = new ParticleSystem.Particle[particles.Length];
 
@@ -26,11 +21,7 @@ public class SonarController : MonoBehaviour {
         int count = 0;
         foreach (var particle in particles)
         {
-                
-            var polyCollider = (PolygonCollider2D)GameObject.Find("sonarColliderAux").GetComponent("PolygonCollider2D");
-
             var colliders = Physics2D.OverlapPointAll(particle.position);
-
 
             newParticles[count] = particle;
 
@@ -47,21 +38,13 @@ public class SonarController : MonoBehaviour {
                     particle2.lifetime = -1;
                     newParticles[count] = particle2;
                     setParticles = true;
-
                 }
 	        }
-
-
-
             count += 1;
         }
 
-
         if(setParticles)particleSystem.SetParticles(newParticles, 3000);
-
     }
-        
-
 }
     
 
