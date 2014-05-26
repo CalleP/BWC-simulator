@@ -1,2 +1,0 @@
-DONE Optimize Echolation class (the nested collider for loop is not necessary).
-DONE Remove the static variable "response" from the playercontroller.
