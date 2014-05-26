@@ -5,7 +5,7 @@ Unity simulator for the BWC project
 
 The actual files i've coded is found in BWC-simulator/Source/Assets/Scripts
 
-Some dead code can also be found under BWC-simulator/Source/Assets/DeadAssets
+Some dead code can also be found under BWC-simulator/Source/Assets/Dead Assets
 
 
 Address for the simulator is:
